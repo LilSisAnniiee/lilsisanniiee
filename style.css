@@ -12,7 +12,7 @@ html, body {
 
 body {
   align-items: center;
-  background-color: #D32F2F;
+  background-color: #e8e2e2;
   display: flex;
   font-family: -apple-system, 
     BlinkMacSystemFont, 
@@ -77,3 +77,44 @@ li span {
     font-size: 3.375rem;
   }
 }
+
+/* Add this CSS for love symbol animations */
+@keyframes love-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Add z-index and position properties */
+.love-symbol {
+  position: fixed; /* Use fixed position to ensure they stay behind other elements */
+  color: red;
+  font-size: 5rem; /* Adjust size as needed */
+  animation: love-pop 2s ease-in-out infinite;
+  z-index: -1; /* Set z-index to ensure symbols appear behind other elements */
+}
+
+.love-message {
+  position: fixed;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  pointer-events: none; /* Prevent the love message from interfering with mouse events */
+  transform: translate(-50%, -50%); /* Center the love message on the cursor */
+  display: none; /* Initially hidden */
+}
+
+
+
+/* Adjust positioning as needed */
